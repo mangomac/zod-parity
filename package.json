@@ -1,0 +1,41 @@
+{
+  "name": "zod-parity",
+  "version": "0.1.0",
+  "description": "Find acceptance differences between Zod 4 and its generated JSON Schema.",
+  "type": "module",
+  "bin": {
+    "zod-parity": "bin/zod-parity.js"
+  },
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "examples",
+    "README.md",
+    "LICENSE",
+    "docs",
+    "THIRD_PARTY_NOTICES.md"
+  ],
+  "scripts": {
+    "test": "node --test",
+    "demo": "node bin/zod-parity.js examples/schemas.ts",
+    "check": "node --check src/index.js && node --check bin/zod-parity.js"
+  },
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "license": "MIT",
+  "author": "Mango",
+  "dependencies": {
+    "ajv": "^8.20.0",
+    "ajv-formats": "^3.0.1",
+    "zod": "^4.6.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mangomac/zod-parity.git"
+  },
+  "homepage": "https://github.com/mangomac/zod-parity"
+}
