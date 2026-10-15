@@ -1,0 +1,456 @@
+{
+  "tool": "zod-parity",
+  "version": "0.1.0",
+  "seed": 1,
+  "maxSamples": 200,
+  "results": [
+    {
+      "name": "anything",
+      "io": "input",
+      "status": "ok",
+      "tested": 11,
+      "zodAccepted": 11,
+      "jsonSchemaAccepted": 11,
+      "skippedNonJson": 0,
+      "mismatches": [],
+      "warnings": [],
+      "jsonSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema"
+      }
+    },
+    {
+      "name": "array",
+      "io": "input",
+      "status": "ok",
+      "tested": 14,
+      "zodAccepted": 4,
+      "jsonSchemaAccepted": 4,
+      "skippedNonJson": 0,
+      "mismatches": [],
+      "warnings": [],
+      "jsonSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "boolean",
+      "io": "input",
+      "status": "ok",
+      "tested": 11,
+      "zodAccepted": 2,
+      "jsonSchemaAccepted": 2,
+      "skippedNonJson": 0,
+      "mismatches": [],
+      "warnings": [],
+      "jsonSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "boolean"
+      }
+    },
+    {
+      "name": "bounded",
+      "io": "input",
+      "status": "ok",
+      "tested": 19,
+      "zodAccepted": 5,
+      "jsonSchemaAccepted": 5,
+      "skippedNonJson": 0,
+      "mismatches": [],
+      "warnings": [],
+      "jsonSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "number",
+        "minimum": 5,
+        "maximum": 10
+      }
+    },
+    {
+      "name": "datetime",
+      "io": "input",
+      "status": "ok",
+      "tested": 21,
+      "zodAccepted": 1,
+      "jsonSchemaAccepted": 1,
+      "skippedNonJson": 0,
+      "mismatches": [],
+      "warnings": [],
+      "jsonSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "string",
+        "format": "date-time",
+        "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+      }
+    },
+    {
+      "name": "divisors",
+      "io": "input",
+      "status": "ok",
+      "tested": 17,
+      "zodAccepted": 3,
+      "jsonSchemaAccepted": 3,
+      "skippedNonJson": 0,
+      "mismatches": [],
+      "warnings": [],
+      "jsonSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "number",
+        "multipleOf": 2,
+        "allOf": [
+          {
+            "multipleOf": 3
+          }
+        ]
+      }
+    },
+    {
+      "name": "email",
+      "io": "input",
+      "status": "ok",
+      "tested": 22,
+      "zodAccepted": 3,
+      "jsonSchemaAccepted": 3,
+      "skippedNonJson": 0,
+      "mismatches": [],
+      "warnings": [],
+      "jsonSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "string",
+        "format": "email",
+        "pattern": "^(?:[A-Za-z0-9_'+\\-]+\\.)*[A-Za-z0-9_'+\\-]*[A-Za-z0-9_+-]@(?:[A-Za-z0-9][A-Za-z0-9\\-]*\\.)+[A-Za-z]{2,}$"
+      }
+    },
+    {
+      "name": "enumDefaultRecord",
+      "io": "input",
+      "status": "ok",
+      "tested": 21,
+      "zodAccepted": 3,
+      "jsonSchemaAccepted": 3,
+      "skippedNonJson": 0,
+      "mismatches": [],
+      "warnings": [],
+      "jsonSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "propertyNames": {
+          "type": "string",
+          "enum": [
+            "key1",
+            "key2"
+          ]
+        },
+        "additionalProperties": {
+          "default": 0,
+          "type": "number"
+        }
+      }
+    },
+    {
+      "name": "enumRecord",
+      "io": "input",
+      "status": "ok",
+      "tested": 22,
+      "zodAccepted": 1,
+      "jsonSchemaAccepted": 1,
+      "skippedNonJson": 0,
+      "mismatches": [],
+      "warnings": [],
+      "jsonSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "propertyNames": {
+          "type": "string",
+          "enum": [
+            "key1",
+            "key2"
+          ]
+        },
+        "additionalProperties": {
+          "type": "number"
+        },
+        "required": [
+          "key1",
+          "key2"
+        ]
+      }
+    },
+    {
+      "name": "exclusive",
+      "io": "input",
+      "status": "ok",
+      "tested": 19,
+      "zodAccepted": 5,
+      "jsonSchemaAccepted": 5,
+      "skippedNonJson": 0,
+      "mismatches": [],
+      "warnings": [],
+      "jsonSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "number",
+        "exclusiveMinimum": 10
+      }
+    },
+    {
+      "name": "impossibleLength",
+      "io": "input",
+      "status": "ok",
+      "tested": 22,
+      "zodAccepted": 0,
+      "jsonSchemaAccepted": 0,
+      "skippedNonJson": 0,
+      "mismatches": [],
+      "warnings": [
+        "No sampled value was accepted by Zod. Supply valid examples through the samples export."
+      ],
+      "jsonSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "string",
+        "minLength": 8,
+        "maxLength": 5
+      }
+    },
+    {
+      "name": "never",
+      "io": "input",
+      "status": "ok",
+      "tested": 11,
+      "zodAccepted": 0,
+      "jsonSchemaAccepted": 0,
+      "skippedNonJson": 0,
+      "mismatches": [],
+      "warnings": [
+        "No sampled value was accepted by Zod. Supply valid examples through the samples export."
+      ],
+      "jsonSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "not": {}
+      }
+    },
+    {
+      "name": "nullValue",
+      "io": "input",
+      "status": "ok",
+      "tested": 11,
+      "zodAccepted": 1,
+      "jsonSchemaAccepted": 1,
+      "skippedNonJson": 0,
+      "mismatches": [],
+      "warnings": [],
+      "jsonSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "null"
+      }
+    },
+    {
+      "name": "nullable",
+      "io": "input",
+      "status": "ok",
+      "tested": 19,
+      "zodAccepted": 11,
+      "jsonSchemaAccepted": 11,
+      "skippedNonJson": 0,
+      "mismatches": [],
+      "warnings": [],
+      "jsonSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": [
+          "string",
+          "null"
+        ]
+      }
+    },
+    {
+      "name": "number",
+      "io": "input",
+      "status": "ok",
+      "tested": 18,
+      "zodAccepted": 11,
+      "jsonSchemaAccepted": 11,
+      "skippedNonJson": 0,
+      "mismatches": [],
+      "warnings": [],
+      "jsonSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "number"
+      }
+    },
+    {
+      "name": "patterns",
+      "io": "input",
+      "status": "ok",
+      "tested": 21,
+      "zodAccepted": 1,
+      "jsonSchemaAccepted": 1,
+      "skippedNonJson": 0,
+      "mismatches": [],
+      "warnings": [],
+      "jsonSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "string",
+        "allOf": [
+          {
+            "pattern": "^hello.*"
+          },
+          {
+            "pattern": "cruel"
+          },
+          {
+            "pattern": "^.{10,}dark"
+          },
+          {
+            "pattern": ".*world$"
+          },
+          {
+            "pattern": "stuff"
+          }
+        ]
+      }
+    },
+    {
+      "name": "record",
+      "io": "input",
+      "status": "ok",
+      "tested": 20,
+      "zodAccepted": 4,
+      "jsonSchemaAccepted": 4,
+      "skippedNonJson": 0,
+      "mismatches": [],
+      "warnings": [],
+      "jsonSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "propertyNames": {
+          "type": "string"
+        },
+        "additionalProperties": {
+          "type": "boolean"
+        }
+      }
+    },
+    {
+      "name": "string",
+      "io": "input",
+      "status": "ok",
+      "tested": 19,
+      "zodAccepted": 10,
+      "jsonSchemaAccepted": 10,
+      "skippedNonJson": 0,
+      "mismatches": [],
+      "warnings": [],
+      "jsonSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "string"
+      }
+    },
+    {
+      "name": "tightInteger",
+      "io": "input",
+      "status": "ok",
+      "tested": 16,
+      "zodAccepted": 4,
+      "jsonSchemaAccepted": 4,
+      "skippedNonJson": 0,
+      "mismatches": [],
+      "warnings": [],
+      "jsonSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 23
+      }
+    },
+    {
+      "name": "tuple",
+      "io": "input",
+      "status": "ok",
+      "tested": 27,
+      "zodAccepted": 14,
+      "jsonSchemaAccepted": 14,
+      "skippedNonJson": 0,
+      "mismatches": [],
+      "warnings": [],
+      "jsonSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "array",
+        "prefixItems": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "number"
+          }
+        ],
+        "items": false,
+        "minItems": 2,
+        "maxItems": 2
+      }
+    },
+    {
+      "name": "tupleRest",
+      "io": "input",
+      "status": "ok",
+      "tested": 21,
+      "zodAccepted": 10,
+      "jsonSchemaAccepted": 10,
+      "skippedNonJson": 0,
+      "mismatches": [],
+      "warnings": [],
+      "jsonSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "array",
+        "prefixItems": [
+          {
+            "type": "string"
+          }
+        ],
+        "items": {
+          "type": "number"
+        },
+        "minItems": 1
+      }
+    },
+    {
+      "name": "union",
+      "io": "input",
+      "status": "ok",
+      "tested": 26,
+      "zodAccepted": 21,
+      "jsonSchemaAccepted": 21,
+      "skippedNonJson": 0,
+      "mismatches": [],
+      "warnings": [],
+      "jsonSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": [
+          "string",
+          "number"
+        ]
+      }
+    },
+    {
+      "name": "unknown",
+      "io": "input",
+      "status": "ok",
+      "tested": 11,
+      "zodAccepted": 11,
+      "jsonSchemaAccepted": 11,
+      "skippedNonJson": 0,
+      "mismatches": [],
+      "warnings": [],
+      "jsonSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema"
+      }
+    }
+  ],
+  "summary": {
+    "schemas": 23,
+    "runs": 23,
+    "tested": 419,
+    "mismatches": 0,
+    "errors": 0
+  }
+}
