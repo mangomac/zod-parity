@@ -1,5 +1,7 @@
 # zod-parity
 
+[![test](https://github.com/mangomac/zod-parity/actions/workflows/test.yml/badge.svg)](https://github.com/mangomac/zod-parity/actions/workflows/test.yml) [![npm](https://img.shields.io/npm/v/zod-parity)](https://www.npmjs.com/package/zod-parity)
+
 Find inputs that Zod 4 and its own generated JSON Schema disagree about.
 
 A small, deterministic CLI. Load your schemas, generate boundary samples, validate the same JSON values with Zod and Ajv, and get a counterexample with error paths. Add your own examples when the generated samples are not enough.
@@ -10,6 +12,15 @@ A small, deterministic CLI. Load your schemas, generate boundary samples, valida
 
 Requires Node **22.18+** (or Node 24+) for native TypeScript type stripping. No transpilation or build step. TypeScript modules must use Node-compatible imports and erasable syntax; `.mjs` works too.
 
+Install Zod 4 in your project, then run the checker against a module that exports Zod schemas:
+
+```sh
+npm install --save-dev zod-parity
+npx zod-parity ./schemas.ts
+```
+
+Or try the bundled demo from a clone:
+
 ```sh
 git clone https://github.com/mangomac/zod-parity.git
 cd zod-parity
@@ -18,16 +29,9 @@ npm test
 node bin/zod-parity.js examples/schemas.ts
 ```
 
-The demo intentionally exits **1** because it finds differences. It does not mean installation failed. No npm registry release has been made. `npx zod-parity` is **not** the installation command for this version.
+The demo intentionally exits **1** because it finds differences. It does not mean installation failed.
 
-To make the command available locally after cloning:
-
-```sh
-npm link
-zod-parity ./examples/schemas.ts --json
-```
-
-To check a module in your own project, install Zod there so that the module's `import { z } from 'zod'` can resolve. The checker uses Zod 4's JSON Schema conversion.
+The checker uses Zod 4's JSON Schema conversion, and your module's `import { z } from 'zod'` must resolve to Zod 4.
 
 ## A real result
 
