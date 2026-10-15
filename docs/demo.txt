@@ -1,0 +1,14 @@
+zod-parity 0.1.0 | Zod 4 vs JSON Schema draft-2020-12
+coordinates [input]: 30 samples, 0 differences
+decimal [input]: 21 samples, 4 differences
+  0.3 | Zod: accept | JSON Schema: reject
+    / -> #/multipleOf: must be multiple of 0.1
+  -1.9 | Zod: accept | JSON Schema: reject
+    / -> #/multipleOf: must be multiple of 0.1
+  1.9 | Zod: accept | JSON Schema: reject
+    / -> #/multipleOf: must be multiple of 0.1
+  0.30000000000000004 | Zod: accept | JSON Schema: reject
+    / -> #/multipleOf: must be multiple of 0.1
+user [input]: 37 samples, 0 differences
+Total: 88 samples, 4 differences, 0 errors.
+Sampling is not proof of equivalence. A difference is not automatically a Zod bug.
